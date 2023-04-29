@@ -225,7 +225,7 @@ class Gameplay extends Phaser.Scene {
             });
         })
 
-        this.time.delayedCall(5000, () => {
+        this.time.delayedCall(6500, () => {
             this.add.tween({
                 targets: this.cg2,
                 alpha: {from: 1, to: 0},
@@ -234,7 +234,7 @@ class Gameplay extends Phaser.Scene {
         })
 
         // transition to next scene
-        this.time.delayedCall(7000, () => {
+        this.time.delayedCall(7001, () => {
             this.scene.start('title');
         })
 
