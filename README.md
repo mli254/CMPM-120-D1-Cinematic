@@ -9,10 +9,10 @@
     3. Scene 3: Gameplay, which uses created art assets to demonstrate ingame content.
     4. Scene 4: Title Screen, with text coming in from the left side, including my multi-line text for the assignment.
 2. 2+ audio assets (e.g. background music and a sound effect)
-    1. Asset 1: bubbles_sfx
+    1. Asset 1: bubbles.mp3
     > Created originally by ristooooo1 on freesound.org, and was edited in Audacity by me.  
     > Link: https://freesound.org/people/ristooooo1/sounds/539823/
-    2. Asset 2: submerged_sfx
+    2. Asset 2: submerged.wav
     > Created originally by Geoff-Bremner-Audio on freesound.org, and was edited in Audacity by me.  
     > Link: https://freesound.org/people/Geoff-Bremner-Audio/sounds/667516/
 3. 2+ image assets (one with transparent background)
