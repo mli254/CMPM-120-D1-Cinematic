@@ -267,12 +267,18 @@ class Title extends Phaser.Scene {
     {
         this.cameras.main.fadeIn(750, 0,0,0);
         
-        // same art asset as before, but placed differently
-        this.titleimg = this.add.image(800, 320, 'cg2');
+        this.titleimg = this.add.image(512, 320, 'cg2');
         this.titleimg.setScale(0.5);
+        this.add.tween({
+            targets: this.titleimg,
+            x: 800, 
+            y: 320,
+            duration: 1000,
+            ease: 'Linear'
+        });
 
         // text uses a font downloaded from Google, and included in the assets folder
-        this.title1 = this.add.text(50, 50, "Hello", 
+        let title1 = this.add.text(50, 50, "Hello", 
         {
             fontSize: "48px",
             fontFamily: '"Press Start 2P"',
@@ -280,17 +286,20 @@ class Title extends Phaser.Scene {
             align: 'center',
             lineSpacing: 25
         });
+        title1.alpha = 0;
 
-        this.title1 = this.add.text(75, 110, "to the", 
+        let title2 = this.add.text(75, 110, "to the", 
         {
             fontSize: "24px",
             fontFamily: '"Press Start 2P"',
             color: "#7d958c",
             align: 'center',
+            alpha: 0,
             lineSpacing: 25
         });
+        title2.alpha = 0;
 
-        this.title1 = this.add.text(100, 145, "Deep", 
+        let title3 = this.add.text(100, 145, "Deep", 
         {
             fontSize: "48px",
             fontFamily: '"Press Start 2P"',
@@ -298,6 +307,31 @@ class Title extends Phaser.Scene {
             align: 'center',
             lineSpacing: 25
         });
+        title3.alpha = 0;
+
+        this.time.delayedCall(2000, () => {
+            this.add.tween({
+                targets: title1,
+                alpha: {from: 0, to: 1},
+                duration: 500
+            });
+        })
+
+        this.time.delayedCall(2500, () => {
+            this.add.tween({
+                targets: title2,
+                alpha: {from: 0, to: 1},
+                duration: 500
+            });
+        })
+
+        this.time.delayedCall(3000, () => {
+            this.add.tween({
+                targets: title3,
+                alpha: {from: 0, to: 1},
+                duration: 500
+            });
+        })
         
         // adding multi-line text
         this.options = this.add.text(100, 320, "Continue\nNew Game\nOptions\nHelp", 
@@ -305,8 +339,71 @@ class Title extends Phaser.Scene {
             fontSize: "18px",
             fontFamily: '"Press Start 2P"',
             color: "#ffffff",
-            lineSpacing: 25
+            lineSpacing: 25,
         });
+        this.options.alpha = 0;
+
+        this.time.delayedCall(4000, () => {
+            this.add.tween({
+                targets: this.options,
+                alpha: {from: 0, to: 1},
+                duration: 500
+            });
+        })
+
+        // geometric shape 4: 
+        this.triangle1 = this.add.triangle(100, 100,
+            0, 0, 
+            50, -75, 
+            100, 0, 
+            0x76a5af);
+        this.triangle1.alpha = 0.4;
+        this.triangle1.angle = 318.3;
+
+        // geometric shape 5: 
+        this.triangle2 = this.add.triangle(240, 200,
+            0, 0, 
+            30, -50, 
+            60, 0, 
+            0xd0e0e3);
+        this.triangle2.alpha = 0.28;
+        this.triangle2.angle = -329;
+
+        // geometric shape 6: 
+        this.triangle3 = this.add.triangle(290, 200, 
+            0, 0,
+            20, -35, 
+            40, 0, 
+            0x134f5c);
+        this.triangle3.alpha = 0.31;
+        this.triangle3.angle = -160;
+
+        // geometric shape 7:
+        this.triangle4 = this.add.triangle(280, 230, 
+            0, 0, 
+            5, -10, 
+            10, 0, 
+            0xd0e0e3);
+        this.triangle4.alpha = 0.76;
+        this.triangle4.angle = -100;
+
+        // geometric shape 8:
+        this.triangle5 = this.add.triangle(80, 150, 
+            0, 0, 
+            10, -20, 
+            20, 0, 
+            0xd0e0e3);
+        this.triangle5.alpha = 0.76;
+        this.triangle5.angle = -80;
+
+        // geometric shape 9:
+        this.triangle5 = this.add.triangle(290, 100, 
+            0, 0, 
+            10, -20, 
+            20, 0, 
+            0xd0e0e3);
+        this.triangle5.alpha = 0.76;
+        this.triangle5.angle = 80;
     }
 
     update()
